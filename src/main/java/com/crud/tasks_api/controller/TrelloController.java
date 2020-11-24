@@ -27,7 +27,6 @@ public class TrelloController {
     public List<TrelloBoardDto> getTrelloBoards() {
         return trelloClient.getTrelloBoards();
     }
-
 }
 
        /* if (boardsConditions()) {

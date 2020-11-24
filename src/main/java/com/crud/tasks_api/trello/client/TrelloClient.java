@@ -33,9 +33,6 @@ public class TrelloClient {
     @Value("${trello.app.token}")
     private String trelloToken;
 
-    @Value("${trello.app.username}")
-    private String username;
-
     @Autowired
     TrelloConfig trelloConfig;
 

@@ -26,7 +26,7 @@ public class TrelloController {
     @RequestMapping(method = RequestMethod.GET, value = "getTrelloBoards")
     public void getTrelloBoards() {
 
-        if (boardsConditions()) {
+       /* if (boardsConditions()) {
             List<TrelloBoardDto> trelloBoards = trelloClient.getTrelloBoards();
 
             trelloBoards.forEach(trelloBoardDto -> {
@@ -37,10 +37,9 @@ public class TrelloController {
 
                 trelloBoardDto.getLists().forEach(trelloList ->
                         System.out.println(trelloList.getName() + " - " + trelloList.getId() + " - " + trelloList.isClosed()));
-            });
-        }
+            });*/
 
-        /*List<TrelloBoardDto> trelloBoards = trelloClient.getTrelloBoards();
+        List<TrelloBoardDto> trelloBoards = trelloClient.getTrelloBoards();
 
         trelloBoards.forEach(trelloBoardDto -> {
 
@@ -50,7 +49,8 @@ public class TrelloController {
 
                     trelloBoardDto.getLists().forEach(trelloList ->
                             System.out.println(trelloList.getName() + " - " + trelloList.getId() + " - " + trelloList.isClosed()));
-                });*/
+                });
+
     }
 
     private boolean boardsConditions() {

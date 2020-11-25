@@ -1,3 +1,3 @@
 Manifest-Version: 1.0
-Main-Class: com.crud.tasks_api.TasksApiApplication
+Main-Class: com.crud.tasks.TasksApplication
 

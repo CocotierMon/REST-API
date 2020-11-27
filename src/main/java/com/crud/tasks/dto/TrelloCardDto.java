@@ -15,6 +15,5 @@ public class TrelloCardDto {
     private String listId;
     private String badges;
 
-    public TrelloCardDto(String test_task, String test_description, String top, String test_id) {
-    }
+
 }

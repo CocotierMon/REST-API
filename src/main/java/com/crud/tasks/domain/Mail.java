@@ -15,5 +15,6 @@ public class Mail {
         this.mailTo = mailTo;
         this.subject = subject;
         this.message = message;
+        this.toCc = "";
     }
 }

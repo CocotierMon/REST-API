@@ -40,11 +40,22 @@ public class SimpleEmailService {
         };
     }
 
-  /*  private SimpleMailMessage createMailMessage(final Mail mail) {
-        SimpleMailMessage mailMessage = new SimpleMailMessage();
-        mailMessage.setTo(mail.getMailTo());
-        messageHelper.setSubject(mail.getSubject());
-        messageHelper.setText(mailCreatorService.buildTrelloCardEmail(mail.getMessage()));
-        return mailMessage;
-    }*/
+    public void sendDailyMessage(final Mail mail) {
+        LOGGER.info("Start email preparation");
+        try {
+            javaMailSender.send(createDailyMessage(mail));
+            LOGGER.info("Email has been send");
+        } catch (MailException e) {
+            LOGGER.error("Fail to process email sending: ", e.getMessage(), e);
+        }
+    }
+
+    private MimeMessagePreparator createDailyMessage(final Mail mail) {
+        return dailyMessage -> {
+            MimeMessageHelper messageHelper = new MimeMessageHelper(dailyMessage);
+            messageHelper.setTo(mail.getMailTo());
+            messageHelper.setSubject(mail.getSubject());
+            messageHelper.setText(mailCreatorService.buildDailyEmail(mail.getMessage()), true);
+        };
+    }
 }

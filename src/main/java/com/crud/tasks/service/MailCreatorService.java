@@ -43,7 +43,7 @@ public class MailCreatorService {
         return templateEngine.process("templates.mail/created-trello-card-mail", context);
     }
 
-   /* public String buildDailyEmail(String message) {
+    public String buildDailyEmail(String message) {
         List<String> whatsNew = new ArrayList<>();
         whatsNew.add("Added everyday messages to our subscribers");
         whatsNew.add("New cards added");
@@ -63,5 +63,5 @@ public class MailCreatorService {
         context.setVariable("admin_config", adminConfig);
         context.setVariable("application_functionality", whatsNew);
         return templateEngine.process("templates.mail/daily-trello-mail", context);
-    } */
+    }
 }

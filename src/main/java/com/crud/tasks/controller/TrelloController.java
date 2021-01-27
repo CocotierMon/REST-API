@@ -27,32 +27,3 @@ public class TrelloController {
         return trelloFacade.createdCard(trelloCardDto);
     }
 }
-
-       /* if (boardsConditions()) {
-            List<TrelloBoardDto> trelloBoards = trelloClient.getTrelloBoards();
-
-            trelloBoards.forEach(trelloBoardDto -> {
-
-                System.out.println(trelloBoardDto.getName() + " - " + trelloBoardDto.getId());
-
-                System.out.println("This board contains lists: ");
-
-                trelloBoardDto.getLists().forEach(trelloList ->
-                        System.out.println(trelloList.getName() + " - " + trelloList.getId() + " - " + trelloList.isClosed()));
-            });*/
-
-
-   /* private boolean boardsConditions() {
-        List<TrelloBoardDto> trelloBoardsWithConditions = trelloClient.getTrelloBoards();
-
-        for (TrelloBoardDto trelloBoardDto : trelloBoardsWithConditions) {
-            if (trelloBoardDto.getName().contains("Kodilla")
-                    && trelloBoardDto.getId() != null
-                    && trelloBoardDto.getName() != null) {
-                return true;
-            }
-            System.out.println("Brak listy, ktora spełnia warunki");
-            return false;
-        }
-        return false;
-    }*/
